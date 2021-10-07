@@ -83,12 +83,16 @@ This document contains the following details:
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly reliable, in addition to restricting traffic to the network.
-- _TODO: What aspect of security do load balancers protect? Availability
-		 What is the advantage of a jump box? The jump box serves as a gateway to access all VMs from a single access point, rather than having to access each VM individually.
+- What aspect of security do load balancers protect?
+	- Availability
+- What is the advantage of a jump box? 
+	- The jump box serves as a gateway to access all VMs from a single access point, rather than having to access each VM individually.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the data and system logs.
-- _TODO: What does Filebeat watch for? Filebeat captures data about the file system.
-- _TODO: What does Metricbeat record? Metricbeat collects machine metrics, such as uptime, and sends them to ELK.
+- What does Filebeat watch for? 
+	- Filebeat captures data about the file system.
+- What does Metricbeat record? 
+	- Metricbeat collects machine metrics, such as uptime, and sends them to ELK.
 
 The configuration details of each machine may be found below.
 
@@ -107,8 +111,10 @@ Only the ELK machine can accept connections from the Internet. Access to this ma
 - 184.59.88.22
 
 Machines within the network can only be accessed over SSH by Jump Box Provisioner.
-- _TODO: Which machine did you allow to access your ELK VM? Jump Box Provisioner via SSH and local machine
-         What was its IP address? Jump Box: 10.0.10.4 and local machine: 184.59.88.22
+- Which machine did you allow to access your ELK VM? 
+	- Jump Box Provisioner via SSH and local machine
+- What was its IP address? 
+	- Jump Box: 10.0.10.4 and local machine: 184.59.88.22
 
 A summary of the access policies in place can be found in the table below.
 
@@ -124,11 +130,12 @@ A summary of the access policies in place can be found in the table below.
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible? The main advantage of automating configuration with Ansible is quick and easy deployment of configurations and eliminating variability between configurations.
+- What is the main advantage of automating configuration with Ansible? 
+	-The main advantage of automating configuration with Ansible is quick and easy deployment of configurations and eliminating variability between configurations.
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-	- COnfigure Elk VM with Docker: specified to elk host, user azadmin.	
+- In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
+	- Configure Elk VM with Docker: specified to elk host, user azadmin.	
 	- Install following modules to host: docker.io, python3-pip, docker via pip module)
 	- Increase system memory
 	- Allow ELK to run on specified ports: 5601, 9200, 5044
@@ -140,13 +147,13 @@ The following screenshot displays the result of running `docker ps` after succes
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- _TODO: Web-1 10.0.10.5 and Web-2 10.0.10.6.
+- Web-1 10.0.10.5 and Web-2 10.0.10.6.
 
 We have installed the following Beats on these machines:
-- _TODO: Filebeat and Metricbeat are installed to the ELK machine.
+- Filebeat and Metricbeat are installed to the ELK machine.
 
 These Beats allow us to collect the following information from each machine:
-- _TODO: Filebeat collects data about the system logs, such as response codes over time. Metricbeat collects machine metrics, like uptime. 
+- Filebeat collects data about the system logs, such as response codes over time. Metricbeat collects machine metrics, like uptime. 
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
