@@ -5,69 +5,11 @@ Cybersecurity bootcamp ELK Stack Project
 
 The files in this repository were used to configure the network depicted below.
 
-![TODO: Update the path with the name of your diagram](Images/diagram_filename.png)
+!ELKStackProject/Diagrams/'Hongell ELK Stack Diagram.drawio.png'
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the elk-playbook.yml file may be used to install only certain pieces of it, such as Filebeat.
 
-elk-playbook.yml
-
----
-- name: Configure Elk VM with Docker
-  hosts: elk
-  remote_user: azadmin
-  become: true
-  tasks:
-    # Use apt module
-    - name: Install docker.io
-      apt:
-        update_cache: yes
-        force_apt_get: yes
-        name: docker.io
-        state: present
-
-      # Use apt module
-    - name: Install python3-pip
-      apt:
-        force_apt_get: yes
-        name: python3-pip
-        state: present
-
-      # Use pip module (It will default to pip3)
-    - name: Install Docker module
-      pip:
-        name: docker
-        state: present
-
-      # Use command module
-    - name: Increase virtual memory
-      command: sysctl -w vm.max_map_count=262144
-
-      # Use sysctl module
-    - name: Use more memory
-      sysctl:
-        name: vm.max_map_count
-        value: '262144'
-        state: present
-        reload: yes
-
-      # Use docker_container module
-    - name: download and launch a docker elk container
-      docker_container:
-        name: elk
-        image: sebp/elk:761
-        state: started
-        restart_policy: always
-        # Please list the ports that ELK runs on
-        published_ports:
-          -  5601:5601
-          -  9200:9200
-          -  5044:5044
-
-      # Use systemd module
-    - name: Enable service docker on boot
-      systemd:
-        name: docker
-        enabled: yes
+!ELKStackProject/Ansible/elk-playbook.yml
 
 This document contains the following details:
 - Description of the Topology
@@ -143,7 +85,7 @@ The playbook implements the following tasks:
 	
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
+!ELKStackProject/Images/Project1_Elk_dockerps_screenshot.JPG
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
